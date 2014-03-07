@@ -1,2 +1,2 @@
-/benchmark/*
-!/benchmark/.gitkeep
+/target/*
+!/target/.gitkeep
