@@ -1,3 +1,5 @@
 #pragma once
 
-int counting_sort();
+#include "../common.h"
+
+int counting_sort(record **records, const int n);
