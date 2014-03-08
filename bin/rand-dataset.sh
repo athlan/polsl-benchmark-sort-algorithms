@@ -2,7 +2,9 @@
 
 # Script generated random values between MIN_VALUE and MAX_VALUE
 # exactly COUNT times in each line. If COUNT is not defined,
-# one number will be generated
+# one number will be generated.
+#
+# In first line the total number of generated items are printed.
 # 
 # Author: Piotr Pelczar
 
@@ -19,6 +21,8 @@ if [ -z $max ]; then echo "Missing MAX_VALUE" && usage; exit; fi;
 if [ -z $count ]; then count=1; fi;
 
 diff=$((max - min + 1));
+
+echo $count;
 
 i=0;
 while [ $i -lt $count ] ; do
