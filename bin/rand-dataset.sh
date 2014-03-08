@@ -4,7 +4,7 @@
 # exactly COUNT times in each line. If COUNT is not defined,
 # one number will be generated.
 #
-# In first line the total number of generated items are printed.
+# (depracated) In first line the total number of generated items are printed.
 # 
 # Author: Piotr Pelczar
 
@@ -22,7 +22,7 @@ if [ -z $count ]; then count=1; fi;
 
 diff=$((max - min + 1));
 
-echo $count;
+#echo $count;
 
 i=0;
 while [ $i -lt $count ] ; do

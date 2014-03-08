@@ -45,7 +45,7 @@ int counting_sort(record **records, const int n) {
 		C[key] = C[key] - 1;
 	}
 	
-	free(C);
+	//free(C);
 	
 	// A is no longer needed
 	// new copy of sorted elements is now stored under B
