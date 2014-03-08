@@ -13,7 +13,7 @@ int main(int argc, char *argv) {
 	tab[1].primaryKey = 2;
 	tab[2].primaryKey = 4;
 	tab[3].primaryKey = 60;
-	tab[4].primaryKey = 30;
+	tab[4].primaryKey = 25;
 	tab[5].primaryKey = 24;
 	tab[6].primaryKey = 25;
 	tab[7].primaryKey = 66;

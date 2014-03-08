@@ -14,6 +14,7 @@ int bucket_sort(record **records, const int n) {
 	record *A;
 	bucketsortListElement **B; // list of buckets
 	bucketsortListElement **C; // list of ending element in each bucket
+	record *result;
 	int i, p;
 	int m = 0;
 	
@@ -28,8 +29,9 @@ int bucket_sort(record **records, const int n) {
 			m = key;
 	}
 	
-	B = (bucketsortListElement**) malloc(m * sizeof(bucketsortListElement*));
-	C = (bucketsortListElement**) malloc(m * sizeof(bucketsortListElement*));
+	result = (record*) malloc(n * sizeof(record*));
+	B = (bucketsortListElement**) malloc((m+1) * sizeof(bucketsortListElement*));
+	C = (bucketsortListElement**) malloc((m+1) * sizeof(bucketsortListElement*));
 	
 	for(i = 0; i <= m; ++i) {
 		B[i] = NULL;
@@ -48,7 +50,7 @@ int bucket_sort(record **records, const int n) {
 		B[key] = insert_new;
 		
 		if(insert_tmp == NULL)
-			C[i] = insert_new;
+			C[key] = insert_new;
 	}
 	
 	// find first gap
@@ -57,31 +59,24 @@ int bucket_sort(record **records, const int n) {
 		p++;
 	}
 	
-	/*if(p != m) {
-		for(i = p+1; i < m; ++i) {
+	if(p != m) {
+		for(i = p+1; i <= m; ++i) {
 			if(B[i] != NULL) {
-				//printf("%d is not null for p: %d, %p %p\n", i, p, &(B[i]), C[p]);
 				// join(C[p], B[i], C[i])
 				(*C[p]).next = B[i];
-				C[p-1] = C[i];
-			}
-		}
-	}*/
-	
-	// join results
-	for(i = 0; i <=m; ++i) {
-		if(B[i] != NULL) {
-			printf("%d = %p\n", i, (*B[i]).next);
-			
-			if((*B[i]).next != NULL) {
-				printf("AND%d?", (*B[i]).next->r->primaryKey);
+				C[p] = C[i];
 			}
 		}
 	}
-	//insert_tmp = C[p];
-	//while(insert_tmp != NULL) {
-	//	printf("JOIN\n");
-	//	insert_tmp = (*insert_tmp).next;
-	//}
-	//A = *records;
+	
+	i = 0;
+	insert_tmp = B[p];
+	while(insert_tmp != NULL) {
+		result[i] = *((*insert_tmp).r);
+		
+		insert_tmp = (*insert_tmp).next;
+		++i;
+	}
+	
+	*records = result;
 }
