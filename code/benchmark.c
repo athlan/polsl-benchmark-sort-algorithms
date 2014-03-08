@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "common.h"
 #include "sort_algorithms/counting_sort.h"
+#include "sort_algorithms/bucket_sort.h"
 
 int main(int argc, char *argv) {
 	int i;
@@ -16,11 +17,12 @@ int main(int argc, char *argv) {
 	tab[5].primaryKey = 24;
 	tab[6].primaryKey = 25;
 	tab[7].primaryKey = 66;
-	tab[8].primaryKey = 1;
+	tab[8].primaryKey = 5;
 	tab[9].primaryKey = 22;
 	
 	// sort
-	counting_sort(&tab, n);
+	//counting_sort(&tab, n);
+	bucket_sort(&tab, n);
 	
 	printf("Sorted:\n");
 	for(i = 0; i < n; ++i) {
