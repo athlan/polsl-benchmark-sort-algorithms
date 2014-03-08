@@ -69,18 +69,21 @@ int bucket_sort(record **records, const int n) {
 		}
 	}
 	
-	i = 0;
+	// for benchmarking is no needed to grab results into structure
+	// because user in algorithm can use specific iteration mode
+	// for data structure
+	/*i = 0;
 	insert_tmp = B[p];
 	while(insert_tmp != NULL) {
 		result[i] = *((*insert_tmp).r);
 		
 		insert_tmp = (*insert_tmp).next;
 		++i;
-	}
+	}*/
+	
+	*records = result;
 	
 	free(A);
 	free(B);
 	free(C);
-	
-	*records = result;
 }
