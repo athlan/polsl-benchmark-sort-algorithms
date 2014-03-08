@@ -1,0 +1,7 @@
+$ uname -a
+Darwin Aths-MacBook-Pro.local 10.8.0 Darwin Kernel Version 10.8.0: Tue Jun  7 16:33:36 PDT 2011; root:xnu-1504.15.3~1/RELEASE_I386 i386
+
+$ system_profiler | grep Processor
+      Processor Name: Intel Core 2 Duo
+      Processor Speed: 2.4 GHz
+      Number Of Processors: 1
