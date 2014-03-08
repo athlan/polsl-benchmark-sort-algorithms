@@ -78,5 +78,9 @@ int bucket_sort(record **records, const int n) {
 		++i;
 	}
 	
+	free(A);
+	free(B);
+	free(C);
+	
 	*records = result;
 }
