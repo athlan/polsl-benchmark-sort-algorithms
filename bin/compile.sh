@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cd code
+pushd ./code
 gcc benchmark.c sort_algorithms/*.c -o ../target/benchmark
-cd ..
+popd
 
 chmod +x ./target/benchmark
