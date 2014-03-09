@@ -5,6 +5,9 @@ Author: Piotr Pelczar (piotpel817@student.polsl.pl)
 
 Silesian University of Technology, Algorithms and Data Structures course.
 
+Full article is avaliable under:<br />
+http://athlan.pl/incopy/polsl-benchmark-sort-algorithms/Main.pdf
+
 ### Abstract
 
 This paper describes and compares counting sort and bucket sort algorithms implementations written in C language. The main doubt is what is the impact of pointers operations in *bucket sort* relatively to single operations on arrays in *counting sort*.
@@ -14,7 +17,6 @@ This paper describes and compares counting sort and bucket sort algorithms imple
 * TeX paper is unser `article` directory
 * Source code is under `code` directory
 * `bin` directory contains some Bash scripts utils
-* 
 
 ### Results
 
@@ -23,6 +25,10 @@ This paper describes and compares counting sort and bucket sort algorithms imple
 Moreover, **gcc optimization have huge impact for Bucket sort which has operations on pointers** (132% faster) and small impact for Counting sort (22% faster).
 
 Operations on pointers can be strongly optimized and have huge impact on algorithms.
+
+![](https://raw.github.com/athlan/polsl-benchmark-sort-algorithms/master/article/materials/compare-gcc-opt3.png)
+
+![](https://raw.github.com/athlan/polsl-benchmark-sort-algorithms/master/article/materials/compare-gcc-opt-0and3.png)
 
 ### `./bin` usage
 
