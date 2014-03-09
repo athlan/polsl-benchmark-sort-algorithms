@@ -14,7 +14,7 @@ This paper describes and compares counting sort and bucket sort algorithms imple
 
 ### Repository structure
 
-* TeX paper is unser `article` directory
+* TeX paper is under `article` directory
 * Source code is under `code` directory
 * `bin` directory contains some Bash scripts utils
 
