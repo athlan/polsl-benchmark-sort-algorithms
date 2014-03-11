@@ -76,7 +76,7 @@ Counting sort and Bucket sort}
 \begin{abstract}
 This paper describes and compares counting sort and bucket sort algorithms implementations written in C language.
 The main doubt is what is the impact of pointers operations in \emph{bucket sort} relatively to single operations on arrays
-in \emph{counting sort}.
+in \emph{counting sort}. The comparation to \emph{quick sort} as a generic sorting alghoritm is described in relation to alghorithms based on keys constratins.
 \end{abstract}
 
 \renewcommand{\contentsname}{Contents}
@@ -111,6 +111,12 @@ Based on pseudocode\cite{czech}.
 Based on pseudocode\cite{czech}.
 
 \lstinputlisting[language=C]{../code/sort_algorithms/counting_sort.c}
+
+\subsection{Quick sort}
+
+From standard library.
+
+\lstinputlisting[language=C]{../code/sort_algorithms/quick_sort.c}
 
 \section{Comparation}
 
@@ -198,9 +204,9 @@ Key ranges:
 
 \section{Conclusion}
 
-\textbf{Counting sort is more effective than Bucket sort} (4.76 times in average and \textbf{5.91 times} for full optimization) in all cases for key range from 0 to 65k. Key range (in integer range) have no impact on time consumtion.
+\textbf{Counting sort is more effective than Bucket sort} (4.76 times in average and \textbf{5.91 times} for full optimization) in all cases for key range from 0 to 65k. Key range (in integer range) have no impact on time consumtion. Quick sort as generic algorithm is much slower then algorithms based on keys constraints, it depends on ammount of data to sort.
 
-Moreover, \textbf{gcc optimization\footnote{3th level} have huge impact for Bucket sort which has operations on pointers} (132\% faster) and small impact for Counting sort (22\% faster).
+Moreover, \textbf{gcc optimization\footnote{3th level} have huge impact for Bucket sort which has operations on pointers} (132\% faster) and small impact for Counting sort (22\% faster) and Quick sort (41\% faster).
 
 Operations on pointers can be strongly optimized and have huge impact on algorithms.
 
